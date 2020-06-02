@@ -57,7 +57,9 @@ public class MainActivity extends AppCompatActivity {
 
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "default");
                 builder.setContentTitle("LP3 Quiz1");
-                builder.setContentText("This is a basic/simple notification");
+
+                // Change
+                builder.setContentText("This is simple notification");
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
                 builder.setContentIntent(pIntent);
                 builder.setAutoCancel(true);
@@ -73,10 +75,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                NotificationCompat.Builder builder = new
-                        NotificationCompat.Builder(MainActivity.this, "default");
+                NotificationCompat.BigPictureStyle picStyle = new NotificationCompat.BigPictureStyle();
+                picStyle.bigPicture(BitmapFactory.decodeResource(getResources(),R.drawable.koala)).build();
+
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(MainActivity.this, "default");
                 builder.setContentTitle("LP3 Quiz1");
-                builder.setContentText("Expand to see picture");
+
+                // Change
+                builder.setContentTitle("This is Big Picture");
+
+                // Add
+                builder.setContentText("Koala!");
+                builder.setStyle(picStyle);
+
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
                 builder.setContentIntent(pIntent);
                 builder.setAutoCancel(true);
@@ -108,6 +119,10 @@ public class MainActivity extends AppCompatActivity {
                 builder.setContentTitle("LP3 Quiz1");
                 builder.setContentText("Expand to see content");
                 builder.setSmallIcon(android.R.drawable.btn_star_big_off);
+
+                // Add
+                builder.setStyle(inboxS);
+
                 builder.setContentIntent(pIntent);
                 builder.setAutoCancel(true);
 
